@@ -25,6 +25,11 @@ binary: ## build executable for Linux
 	@echo "WARNING: binary creates a Linux executable. Use cross for macOS or Windows."
 	./scripts/build/binary
 
+.PHONY: rabinary
+rabinary:
+	@echo "WARNING: rabinary creates a Linux executable for the Remote Attestation process. For the normal executable use binary."
+	./scripts/build/rabinary
+
 .PHONY: cross
 cross: ## build executable for macOS and Windows
 	./scripts/build/cross

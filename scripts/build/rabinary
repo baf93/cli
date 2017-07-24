@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+#
+# Build a static binary for the host OS/ARCH
+#
+
+set -eu -o pipefail
+
+source ./scripts/build/.variables
+
+echo "Building statically linked $TARGET for remote attestation"
+export CGO_ENABLED=0
+go build -tags rabinary -o "${TARGET}" --ldflags "${LDFLAGS}" "${SOURCE}"
+
+ln -sf "$(basename ${TARGET})" build/docker

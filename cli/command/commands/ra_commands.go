@@ -1,4 +1,4 @@
-// +build !rabinary
+// +build rabinary
 
 package commands
 
@@ -90,6 +90,7 @@ func AddCommands(cmd *cobra.Command, dockerCli *command.DockerCli) {
 		hide(container.NewPauseCommand(dockerCli)),
 		hide(container.NewPortCommand(dockerCli)),
 		hide(container.NewPsCommand(dockerCli)),
+		hide(container.NewRaInfoCommand(dockerCli)),
 		hide(container.NewRenameCommand(dockerCli)),
 		hide(container.NewRestartCommand(dockerCli)),
 		hide(container.NewRmCommand(dockerCli)),

@@ -36,6 +36,10 @@ binary: build_docker_image
 
 build: binary
 
+#build executable for linux Remote Attestation
+rabinary: build_docker_image
+	docker run --rm $(ENVVARS) $(MOUNTS) $(DEV_DOCKER_IMAGE_NAME) make rabinary
+
 # clean build artifacts using a container
 .PHONY: clean
 clean: build_docker_image
